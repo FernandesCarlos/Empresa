@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa</title>
+</head>
+<body>
+        <h1 class="text-center mb-4">Cadastro de Alunos</h1>
+        <form id="idform">
+            <label for="idnome">Nome: </label>
+            <input type="text" id="idnome" name="nome" required>
+            
+            <label for="ididade">Idade: </label>
+            <input type="number" id="ididade" name="idade" required>
+
+            <label for="idcargo">Cargo: </label>
+            <input type="text" id="idcargo" name="cargo" required>
+
+            <label for="idsalario">Salario: </label>
+            <input type="number" id="idsalario" name="salario" required>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Cargo</th>
+                    <th>Salario</th>
+                </tr>
+            </thead>
+
+            <tbody id="idlinhas">
+
+            </tbody>
+        </table>
+        <script src="main.js"></script>
+</body>
+</html>
