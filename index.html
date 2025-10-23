@@ -1,44 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empresa</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Funcionários</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-        <h1 class="text-center mb-4">Cadastro de Alunos</h1>
-        <form id="idform">
-            <label for="idnome">Nome: </label>
-            <input type="text" id="idnome" name="nome" required>
-            
-            <label for="ididade">Idade: </label>
-            <input type="number" id="ididade" name="idade" required>
+<body class="bg-light">
 
-            <label for="idcargo">Cargo: </label>
-            <input type="text" id="idcargo" name="cargo" required>
+<div class="container my-5">
+  <h1 class="text-center mb-4">Cadastro de Funcionários</h1>
 
-            <label for="idsalario">Salario: </label>
-            <input type="number" id="idsalario" name="salario" required>
+  <!-- FORMULÁRIO -->
+  <form id="idform" class="row g-3 mb-4">
+    <div class="col-md-3">
+      <input type="text" id="idnome" class="form-control" placeholder="Nome" required>
+    </div>
+    <div class="col-md-2">
+      <input type="number" id="ididade" class="form-control" placeholder="Idade" required>
+    </div>
+    <div class="col-md-3">
+      <input type="text" id="idcargo" class="form-control" placeholder="Cargo" required>
+    </div>
+    <div class="col-md-2">
+      <input type="number" id="idsalario" class="form-control" placeholder="Salário" required>
+    </div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-primary w-100">Salvar</button>
+    </div>
+  </form>
 
-            <button type="submit">Cadastrar</button>
-        </form>
+  <!-- BUSCA -->
+  <div class="row g-3 mb-3">
+    <div class="col-md-6 d-flex">
+      <input type="text" id="idbuscaNome" class="form-control me-2" placeholder="Buscar por nome">
+      <button id="btnBuscaNome" class="btn btn-outline-primary">Buscar</button>
+    </div>
+    <div class="col-md-6 d-flex">
+      <input type="number" id="idbuscaIndex" class="form-control me-2" placeholder="Buscar por índice">
+      <button id="btnBuscaIndex" class="btn btn-outline-primary">Buscar</button>
+    </div>
+  </div>
 
-        <table>
-           <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Idade</th>
-                    <th>Cargo</th>
-                    <th>Salario</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
+  <p id="resultadoBusca" class="fw-bold"></p>
 
+  <!-- TABELA DE FUNCIONÁRIOS -->
+  <table class="table table-striped table-bordered text-center">
+    <thead class="table-dark">
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Cargo</th>
+        <th>Salário</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="idlinhas"></tbody>
+  </table>
 
-            <tbody id="idlinhas">
+  <!-- RELATÓRIOS -->
+  <div class="relatorios mt-4">
+    <h2>Relatórios Dinâmicos</h2>
+    <div class="mb-3 d-flex flex-wrap gap-2">
+      <button id="btnRelSalario" class="btn btn-success">Salários > R$ 5000</button>
+      <button id="btnRelMedia" class="btn btn-info text-white">Média Salarial</button>
+      <button id="btnRelCargos" class="btn btn-warning">Cargos Únicos</button>
+      <button id="btnRelNomes" class="btn btn-secondary">Nomes em Maiúsculo</button>
+    </div>
+    <div id="relatoriosResultado" class="border p-3 bg-white rounded"></div>
+  </div>
+</div>
 
-            </tbody>
-        </table>
-        <script src="main.js"></script>
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
